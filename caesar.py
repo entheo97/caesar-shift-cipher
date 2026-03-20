@@ -1,16 +1,20 @@
-def caesar(cyphertext):
+#!/usr/bin/env python3
+
+import cli
+
+def caesar(ciphertext):
     """
     Brute forces a Caesar cipher by trying all 26 possible shift values.
     Prints each candidate plaintext for manual inspection.
 
     Args:
-        cyphertext (str): The encrypted string to decode.
+        ciphertext (str): The encrypted string to decode.
     """
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     shift_value = 0
     plaintext = []
     for shift_value in range(26):  # try all 26 possible shifts
-        for character in list(cyphertext.lower()):
+        for character in list(ciphertext.lower()):
             if character not in alphabet:  # preserve spaces and punctuation
                 plaintext.append(character)
                 continue
@@ -20,4 +24,4 @@ def caesar(cyphertext):
         print(''.join(plaintext))  # print candidate plaintext for this shift
         plaintext = []  # reset for next shift
 
-caesar('NZXMTYP AWLYPE VTEP ASZYP')
+caesar(cli.cli_commands.ciphertext)
