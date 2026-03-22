@@ -21,7 +21,7 @@ def caesar(ciphertext):
             new_index = alphabet.index(character) + shift_value  # shift letter forward  
             new_index = new_index % 26  # wrap around if new index exceeds 25
             plaintext.append(alphabet[new_index])
-        print(''.join(plaintext))  # print candidate plaintext for this shift
+        print(f'Shift Value {shift_value:2d}: ' + ''.join(plaintext)) # print candidate plaintext for this shift
         plaintext = []  # reset for next shift
 
 caesar(cli.cli_commands.ciphertext)
